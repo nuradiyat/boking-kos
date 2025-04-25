@@ -16,10 +16,12 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug');
             $table->string('thumbnail');
+            // constrain ini dia memberi tau bahwa kolom ini atau atribut ini adalah forenkay
             $table->foreignId('city_id')->constrained('cities')->cascadeOnDelete();
             $table->foreignId('category_id')->constrained('categories')->cascadeOnDelete();
             $table->text('description');
-            $table->text('price');
+            // $table->text('price');
+            $table->integer('price');
             $table->text('address');
             $table->timestamps();
         });

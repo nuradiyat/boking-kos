@@ -10,6 +10,8 @@ class City extends Model
     //
     use HasFactory;
 
+    // fungsi sebagai kolom mana aja yang bisa kita isi nama 
+    // harus seuai dengan atribut arau fild migration
     protected $fillable = [
         'image',
         'name',
