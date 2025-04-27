@@ -19,7 +19,8 @@ class BoardingHouseResource extends Resource
 {
     protected static ?string $model = BoardingHouse::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-home-modern';
+    protected static ?string $navigationGroup = 'Boarding House Management';
 
     public static function form(Form $form): Form
     {
@@ -39,15 +40,14 @@ class BoardingHouseResource extends Resource
                                 Forms\Components\TextInput::make('name')
                                     ->required()
                                     // biar sedikit delay
-                                    // ->debounce(500)
+                                    ->debounce(500)
                                     // jadi dia akan beraksi ketika ada perubahan
                                     ->reactive() // wajib biar bisa denger perubahan input
                                     ->afterStateUpdated(function ($state, callable $set) {
                                         $set('slug', Str::slug($state));
                                     }),
                                 Forms\Components\TextInput::make('slug')
-                                    ->required()
-                                    ->disabled(), // supaya gak bisa diedit manual, biar fokus dari name,
+                                    ->required(),
                                 Forms\Components\Select::make('city_id')
                                     // city ini adalan nama fungsi di model coba liat model boarding
                                     ->relationship('city', 'name')
@@ -67,13 +67,53 @@ class BoardingHouseResource extends Resource
                                 Forms\Components\Textarea::make('address')
                                     ->required(),
                             ]),
-                        Forms\Components\Tabs\Tab::make('city_id')
+                        Forms\Components\Tabs\Tab::make('Bonus Ngekos')
                             ->schema([
-                                // ...
+                                Forms\Components\Repeater::make('bonuses')
+                                    ->relationship('bonuses')
+                                    ->schema([
+                                        Forms\Components\FileUpload::make('image')
+                                            ->image()
+                                            // directory atau tempat menyimpannya
+                                            // ->directory('image')
+                                            ->required(),
+                                        Forms\Components\TextInput::make('name')
+                                            ->required(),
+                                        Forms\Components\TextInput::make('description')
+                                            ->required(),
+                                    ])
                             ]),
-                        Forms\Components\Tabs\Tab::make('Tab 3')
+                        Forms\Components\Tabs\Tab::make('Kamar')
                             ->schema([
-                                // ...
+                                Forms\Components\Repeater::make('rooms')
+                                    ->relationship('rooms')
+                                    ->schema([
+                                        Forms\Components\TextInput::make('name')
+                                            ->required(),
+                                        Forms\Components\TextInput::make('room_type')
+                                            ->required(),
+                                        Forms\Components\TextInput::make('square_feet')
+                                            ->numeric()
+                                            ->required(),
+                                        Forms\Components\TextInput::make('capacity')
+                                            ->numeric()
+                                            ->required(),
+                                        Forms\Components\TextInput::make('price_per_month')
+                                            ->numeric()
+                                            ->prefix('IDR')
+                                            ->required(),
+                                        Forms\Components\Toggle::make('is_available')
+                                            ->required(),
+                                        Forms\Components\Repeater::make('images')
+                                            ->relationship('images')
+                                            ->schema([
+                                                Forms\Components\FileUpload::make('image')
+                                                    ->image()
+                                                    // directory atau tempat menyimpannya
+                                                    // ->directory('image')
+                                                    ->required(),
+                                            ])
+                                    ])
                             ]),
                     ])->columnSpan(2)
             ]);
@@ -83,13 +123,19 @@ class BoardingHouseResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\ImageColumn::make('thumbnail'),
+                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('city.name'),
+                Tables\Columns\TextColumn::make('category.name'),
+                Tables\Columns\TextColumn::make('price'),
             ])
             ->filters([
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
