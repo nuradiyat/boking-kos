@@ -2,6 +2,12 @@
 
 namespace App\Providers;
 
+use App\Interfaces\BoardingHouseRepositoryInterface;
+use App\Interfaces\CategoryRepositoryInterface;
+use App\Interfaces\CityRepositoryInterface;
+use app\Repositories\BoardingHouseRepository;
+use app\Repositories\CategoryRepository;
+use app\Repositories\CityRepository;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -11,7 +17,10 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // kita daftar interface dan repossitory nya
+        $this->app->bind(CityRepositoryInterface::class, CityRepository::class);
+        $this->app->bind(CategoryRepositoryInterface::class, CategoryRepository::class);
+        $this->app->bind(BoardingHouseRepositoryInterface::class, BoardingHouseRepository::class);
     }
 
     /**
