@@ -1,9 +1,9 @@
 <?php 
 
-namespace app\Repositories;
+namespace App\Repositories;
 
-use app\Interfaces\BoardingHouseRepositoryInterface;
-use app\Models\BoardingHouse;
+use App\Interfaces\BoardingHouseRepositoryInterface;
+use App\Models\BoardingHouse;
 use Filament\Forms\Components\Builder;
 // use Illuminate\Database\Eloquent\Builder;
 
@@ -63,6 +63,11 @@ class BoardingHouseRepository implements BoardingHouseRepositoryInterface
     {
         return BoardingHouse::where('slug', $slug)->first();
     }
+
+    // public function getPopularBoardingRumah() 
+    // {
+    //     return BoardingHouse::all();
+    // }
 
     // selanjutnya kita daftar kan reposiry dan interface 
     // di bagian reposri tori service provide

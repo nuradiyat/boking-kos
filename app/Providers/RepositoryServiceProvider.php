@@ -5,9 +5,9 @@ namespace App\Providers;
 use App\Interfaces\BoardingHouseRepositoryInterface;
 use App\Interfaces\CategoryRepositoryInterface;
 use App\Interfaces\CityRepositoryInterface;
-use app\Repositories\BoardingHouseRepository;
-use app\Repositories\CategoryRepository;
-use app\Repositories\CityRepository;
+use App\Repositories\BoardingHouseRepository;
+use App\Repositories\CategoryRepository;
+use App\Repositories\CityRepository;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider

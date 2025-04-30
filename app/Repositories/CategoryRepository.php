@@ -1,10 +1,9 @@
 <?php
 
-namespace app\Repositories;
+namespace App\Repositories;
 
 use App\Interfaces\CategoryRepositoryInterface;
 use App\Models\Category;
-use PhpParser\Node\Expr\FuncCall;
 
 class CategoryRepository implements CategoryRepositoryInterface
 {
