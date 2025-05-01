@@ -30,9 +30,13 @@ class HomeController extends Controller
         // kita ambil datanya karena kita pake repositori patenr
         // kita panggil repositorinya
         $categories = $this->categoryRepository->getAllCategories();
+        // bukan karena dia fungsi popular dia cuma bisa akases popular disini kan dia manggil tabel nya 
+        // y berrarti dia bisa akses semua atribut atau fild nya juga sama aja ka $boardingHousea = $this->boardingHouseRepository->getAllBoardingHouses();
         $popularBoardingHouses = $this->boardingHouseRepository->getPopularBoardingHouses();
+        $cities = $this->cityRepository->getAllCities();
+        $boardingHouses = $this->boardingHouseRepository->getAllBoardingHouses();
         // lalu kita lempar varibel ini ke dalam se buah view seperti ini caranya
         // kita bisa menggunakan compact kita panggil varibel $categories
-        return view('pages.home', compact('categories', 'popularBoardingHouses'));
+        return view('pages.home', compact('categories', 'popularBoardingHouses', 'cities', 'boardingHouses'));
     }
 }
