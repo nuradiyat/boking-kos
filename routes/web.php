@@ -16,10 +16,12 @@ Route::get('/city/{slug}', [CityController::class, 'show'])->name('city.show');
 Route::get('/kos/{slug}', [BoardingHouseController::class, 'show'])->name('kos.show');
 Route::get('/kos/{slug}/rooms', [BoardingHouseController::class, 'rooms'])->name('kos.rooms');
 
-// Route::get('/kos/booking/{slug}', [BookingController::class, 'booking'])->name('booking');
+Route::get('/kos/booking/{slug}', [BookingController::class, 'booking'])->name('booking');
 
-// Route::get('/kos/booking/{slug}/information', [BookingController::class, 'information'])->name('booking.information');
-// Route::post('/kos/booking/{slug}/information/save', [BookingController::class, 'saveInformation'])->name('booking.information.save');
+
+Route::get('/kos/booking/{slug}/information', [BookingController::class, 'information'])->name('booking.information');
+// route untuk sava information
+Route::post('/kos/booking/{slug}/information/save', [BookingController::class, 'saveInformation'])->name('booking.information.save');
 
 // Route::get('/kos/booking/{slug}/checkout', [BookingController::class, 'checkout'])->name('booking.checkout');
 // Route::post('/kos/booking/{slug}/payment', [BookingController::class, 'payment'])->name('booking.payment');
