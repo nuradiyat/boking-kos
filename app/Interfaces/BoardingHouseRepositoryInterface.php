@@ -1,4 +1,5 @@
 <?php
+// intafece itu tempat kita mau buat fungsi apa aja si kan nornal nya crud y
 // kita ambil fungsi apa saja dari model city
 namespace App\Interfaces;
 

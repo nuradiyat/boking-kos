@@ -6,6 +6,8 @@ interface CategoryRepositoryInterface
 {
     // public function getAllCategory();
     public function getAllCategories();
+
+    public function getCategoryBySlug($slug);
 }
 
 

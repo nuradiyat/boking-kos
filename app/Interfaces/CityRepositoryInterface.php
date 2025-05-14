@@ -7,6 +7,9 @@ interface CityRepositoryInterface
 {
     // kita deklarasikan fungsi apa saja kita hanya akan mngemabil
     public function getAllCities();
+
+    public function getCityBySlug($slug);
+
 }
 
 
