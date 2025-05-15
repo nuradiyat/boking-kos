@@ -199,5 +199,6 @@
 
 {{-- kita akan memanggil script nya --}}
 @section('scripts')
+{{-- {{ asset('assets/js/index.js') }} --}}
     <script src="{{ asset('assets/js/details.js') }}"></script>
 @endsection
