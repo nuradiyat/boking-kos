@@ -56,4 +56,6 @@ class BoardingHouseController extends Controller
 
         return view('pages.boarding-house.index', compact('boardingHouses'));
     }
+
+    
 }

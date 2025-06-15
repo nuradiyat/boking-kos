@@ -25,6 +25,9 @@ Route::post('/kos/booking/{slug}/information/save', [BookingController::class, '
 
 Route::get('/kos/booking/{slug}/checkout', [BookingController::class, 'checkout'])->name('booking.checkout');
 Route::post('/kos/booking/{slug}/payment', [BookingController::class, 'payment'])->name('booking.payment');
+Route::get('/kos/booking/{slug}/select-payment', [BookingController::class, 'selectPayment'])->name('booking.payment.select');
+Route::post('/kos/booking/{slug}/process-payment', [BookingController::class, 'processPayment'])->name('booking.payment.process');
+
 
 // Route::get('/booking-success', [BookingController::class, 'success'])->name('booking.success');
 
@@ -33,3 +36,9 @@ Route::get('/find-results', [BoardingHouseController::class, 'findResults'])->na
 
 Route::get('/check-booking', [BookingController::class, 'check'])->name('check-booking');
 // Route::post('/check-booking', [BookingController::class, 'show'])->name('check-booking.show');
+
+// Setelah checkout
+// Route::get('/booking/{slug}/select-payment', [BookingController::class, 'showPaymentMethod'])->name('booking.payment.select');
+
+// Proses pembayaran dan simpan ke DB
+// Route::post('/booking/{slug}/process-payment', [BookingController::class, 'processPayment'])->name('booking.payment.process');

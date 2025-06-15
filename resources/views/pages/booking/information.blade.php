@@ -140,6 +140,12 @@
                 </div>
             </div>
         </div>
+        <div id="PaymentOptions" class="flex gap-3 rounded-[30px] border border-[#F1F2F6] p-5 gap-4 mx-5">
+            <input type="radio" name="payment_method" value="full_payment"> Bayar Penuh
+            <input type="radio" name="payment_method" value="down_payment"> DP Dulu
+
+        </div>
+
         <div id="BottomNav" class="relative flex w-full h-[132px] shrink-0 bg-white">
             <div class="fixed bottom-5 w-full max-w-[640px] px-5 z-10">
                 <div class="flex items-center justify-between rounded-[40px] py-4 px-6 bg-ngekos-black">

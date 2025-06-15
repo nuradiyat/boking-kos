@@ -72,7 +72,7 @@
             @foreach ($popularBoardingHouses as $boardingHouse)
                 <div class="swiper-wrapper">
                     <div class="swiper-slide !w-fit">
-                        <a href="{{ route('kos.show', $boardingHouse->slug)}}" class="card">
+                        <a href="{{ route('kos.show', $boardingHouse->slug) }}" class="card">
                             <div
                                 class="flex flex-col w-[250px] shrink-0 rounded-[30px] border border-[#F1F2F6] p-4 pb-5 gap-[10px] hover:border-[#91BF77] transition-all duration-300">
                                 <div class="flex w-full h-[150px] shrink-0 rounded-[30px] bg-[#D9D9D9] overflow-hidden">
@@ -165,12 +165,14 @@
             @foreach ($boardingHouses as $boardingHouse)
                 <a href="details.html" class="card">
                     <div
-                        class="flex rounded-[30px] border border-[#F1F2F6] p-4 gap-4 bg-white hover:border-[#91BF77] transition-all duration-300">
-                        <div class="flex w-[120px] h-[183px] shrink-0 rounded-[30px] bg-[#D9D9D9] overflow-hidden">
+                        class="flex w-[250px] flex-col rounded-[30px] border border-[#F1F2F6] p-4 gap-3 bg-white hover:border-[#91BF77] transition-all duration-300">
+
+                        <div class="flex w-full h-[150px] shrink-0 rounded-[30px] bg-[#D9D9D9] overflow-hidden">
                             <img src="{{ asset('storage/' . $boardingHouse->thumbnail) }}"
                                 class="w-full h-full object-cover" alt="icon">
                         </div>
-                        <div class="flex flex-col gap-3 w-full">
+
+                        <div class="flex flex-col gap-3">
                             <h3 class="font-semibold text-lg leading-[27px] line-clamp-2 min-h-[54px]">
                                 {{ $boardingHouse->name }}</h3>
                             <hr class="border-[#F1F2F6]">

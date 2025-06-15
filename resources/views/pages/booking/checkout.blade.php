@@ -287,9 +287,12 @@
                         </p>
                         <span class="text-sm text-white">Grand Total</span>
                     </div>
-                    <button type="submit"
+                     <a href="{{ route('booking.payment.select', $slug) }}"
                         class="flex shrink-0 rounded-full py-[14px] px-5 bg-ngekos-orange font-bold text-white">Pay
-                        Now</button>
+                        Now</a>
+                    {{-- <button type="submit" href="{{ route('booking.payment.select', $slug) }}"
+                        class="flex shrink-0 rounded-full py-[14px] px-5 bg-ngekos-orange font-bold text-white">Pay
+                        Now</button> --}}
                 </div>
             </div>
         </div>

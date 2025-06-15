@@ -28,6 +28,7 @@ class CustomerInformationStoreRequest extends FormRequest
             'email' => 'required|email',
             'phone_number' => 'required|string',
             'duration' => 'required',
+            'payment_method' => 'required',
             // strart date dia diambil dari cus-info.js inputannya
             'start_date' => 'required'
 
