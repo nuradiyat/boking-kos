@@ -13,7 +13,7 @@
 
 <body>
     <div id="Content-Container"
-        class="relative flex flex-col w-full max-w-[780px] min-h-screen mx-auto bg-white overflow-x-hidden">
+        class="relative flex flex-col w-full w-full min-h-screen mx-auto bg-white overflow-x-hidden">
         {{-- fungsi yield agar bisa di gunakan di berbagai halaman --}}
         @yield('content')
     </div>

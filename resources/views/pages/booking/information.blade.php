@@ -140,11 +140,33 @@
                 </div>
             </div>
         </div>
-        <div id="PaymentOptions" class="flex gap-3 rounded-[30px] border border-[#F1F2F6] p-5 gap-4 mx-5">
-            <input type="radio" name="payment_method" value="full_payment"> Bayar Penuh
-            <input type="radio" name="payment_method" value="down_payment"> DP Dulu
-
+        <div class="flex flex-col w-full gap-4 px-5">
+            <p class="font-semibold text-lg text-gray-800 mb-2">Email Address</p>
+            <div id="PaymentOptions"
+                class="flex gap-6 rounded-[30px] border border-gray-200 p-5 px-8 bg-white shadow-sm max-w-md mx-auto">
+                <label
+                    class="flex items-center cursor-pointer space-x-3 text-gray-700 hover:text-orange-600 transition-colors">
+                    <input type="radio" name="payment_method" value="full_payment" class="hidden peer">
+                    <span
+                        class="w-5 h-5 inline-block rounded-full border border-gray-300 peer-checked:border-orange-600 flex-shrink-0 relative">
+                        <span
+                            class="block w-3 h-3 rounded-full bg-orange-600 scale-0 peer-checked:scale-100 transition-transform origin-center absolute top-1 left-1"></span>
+                    </span>
+                    <span class="select-none font-medium">Bayar Penuh</span>
+                </label>
+                <label
+                    class="flex items-center cursor-pointer space-x-3 text-gray-700 hover:text-orange-600 transition-colors">
+                    <input type="radio" name="payment_method" value="down_payment" class="hidden peer">
+                    <span
+                        class="w-5 h-5 inline-block rounded-full border border-gray-300 peer-checked:border-orange-600 flex-shrink-0 relative">
+                        <span
+                            class="block w-3 h-3 rounded-full bg-orange-600 scale-0 peer-checked:scale-100 transition-transform origin-center absolute top-1 left-1"></span>
+                    </span>
+                    <span class="select-none font-medium">DP Dulu</span>
+                </label>
+            </div>
         </div>
+
 
         <div id="BottomNav" class="relative flex w-full h-[132px] shrink-0 bg-white">
             <div class="fixed bottom-5 w-full max-w-[640px] px-5 z-10">
