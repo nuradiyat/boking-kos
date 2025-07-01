@@ -2,6 +2,11 @@
 # Filament Demo App
 
 Boking Kos😎😎😎
+You're ready to go! Visit the url in your browser, and login with:
+
+-   **Username:** ibukos@ngekos.com
+-   **Password:** slebew
+
 
 ![Filament Demo](https://github.com/filamentphp/demo/assets/171715/899161a9-3c85-4dc9-9599-13928d3a4412)
 
@@ -68,36 +73,3 @@ Run the dev server (the output will give the address):
 php artisan serve
 ```
 
-You're ready to go! Visit the url in your browser, and login with:
-
--   **Username:** ibukos@ngekos.com
--   **Password:** slebew
-
-## Features to explore
-
-### Relations
-
-#### BelongsTo
-- ProductResource
-- OrderResource
-- PostResource
-
-#### BelongsToMany
-- CategoryResource\RelationManagers\ProductsRelationManager
-
-#### HasMany
-- OrderResource\RelationManagers\PaymentsRelationManager
-
-#### HasManyThrough
-- CustomerResource\RelationManagers\PaymentsRelationManager
-
-#### MorphOne
-- OrderResource -> Address
-
-#### MorphMany
-- ProductResource\RelationManagers\CommentsRelationManager
-- PostResource\RelationManagers\CommentsRelationManager
-
-#### MorphToMany
-- BrandResource\RelationManagers\AddressRelationManager
-- CustomerResource\RelationManagers\AddressRelationManager
