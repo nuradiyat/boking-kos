@@ -9,11 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 
 <body>
     <div id="Content-Container"
-        class="relative flex flex-col w-full w-full min-h-screen mx-auto bg-white overflow-x-hidden">
+        class="relative flex flex-col w-full min-h-screen mx-auto bg-white overflow-x-hidden">
         {{-- fungsi yield agar bisa di gunakan di berbagai halaman --}}
         @yield('content')
     </div>
